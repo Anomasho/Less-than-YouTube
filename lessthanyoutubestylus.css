@@ -1,0 +1,1046 @@
+/* ==UserStyle==
+@name           Less than YouTube
+@namespace      https://github.com/Anomasho/Less-than-YouTube
+@version        0.9
+@description    YouTube without the boring corporate feeling
+@author         Anomasho
+
+@preprocessor   less
+@var            color textColor "Text Color" #fff
+@var            color backgroundColor "Background Color" #000
+@var            color topbartextColor "Topbar Text Color" #fff
+@var            color topbarbackgroundColor "Topbar Background Color" #000
+@var            text topbarHeight "Topbar height" 19px
+@var            color navigationprogressColor "Navigation Loading Progress Color" #000
+@var            text navigationprogressHeight "Navigation Loading Progress Height" 100%
+@var            checkbox navigationprogressOff "No Navigation Loading Progress" 0
+@var            checkbox enableName "Enable Name" 1
+@var            checkbox enableMotto "Enable Motto" 1
+@advanced       text motto "Motto (Use '')" "'Broadcast Yourself™ (Somewhere Else)'"
+@var            text searchbarWidth "Searchbar Width" 311px
+@var            checkbox removeClearbtn "Remove Clear Button" 0
+@var            checkbox searchsuggestOff "No Search Suggestions" 0
+@var            checkbox noRecommended "No Recommended Homepage" 0
+@var            checkbox noshortsHome "No Shorts on Homepage" 1
+@var            checkbox pfpThumbnail "Profile Picture on Thumbnail Homepage" 1
+@var            number gridItemsperrow "Grid Item Per Row" 6
+@var            text thumbnailresultsSize "Thumbnail Results Size" 336px
+@var            checkbox noshortsResults "No Shorts on Search Results" 0
+@var            text sidebarWidth "Sidebar Width" 384px
+@var            checkbox noshortsSidebar "No Shorts on Sidebar" 1
+@var            checkbox relatedOff "Turn Off Related Sidebar" 1
+@var            text thumbnailrelatedSize "Thumbnail Related Sidebar Size" 168px
+@var            checkbox noCommentpfp "No Comment Profile Pictures" 0
+@var            select removeCommentcontainimg "Remove Comment contains an image (experimental)" ["off:Off", "keeptext:Keep text", "on:On"]
+==/UserStyle== */
+
+@-moz-document domain("www.youtube.com") {
+    * {
+        --t518e925f61bdcb91: unset !important;
+        --tffc2fd3a644f6275: @textColor !important;
+        --t4a6da19e16bf221a: @textColor !important;
+        --yt-saturated-text-primary: @textColor !important;
+        --yt-live-chat-primary-text-color: @textColor !important;
+        --yt-sys-color-baseline--text-primary: @textColor !important;
+        --yt-watch-info-text-endpoint-color: @textColor !important;
+        --yt-endpoint-color: @textColor !important;
+        --yt-live-chat-secondary-text-color: @textColor !important;
+        --t2d807bb79e75606d: #00f !important;
+        --t904a88c623ca27ab: #0f0 !important;
+        --t3e41d7b17b187f69: unset !important;
+        --t08a7c6c176cbc5c2: #000;
+        --yt-live-chat-header-background-color: unset !important;
+        --yt-deprecated-opalescence-soft-grey-opacity-lighten-3: unset !important;
+        --yt-active-playlist-panel-background-color: @textColor;
+        --yt-live-chat-background-color: unset !important;
+        --yt-lightsource-secondary-title-color: #000;
+        --yt-live-chat-action-panel-background-color: #000;
+        --yt-live-chat-vem-background-color: #000;
+        --t6216186c28b3834b: #000;
+        --tdc8af6750f0dad0d: #000;
+        --tfa3475c508f5dfef: #00f !important;
+        --yt-saturated-raised-background: unset !important;
+        --ytd-masthead-height: @topbarHeight;
+        --ytd-toolbar-height: @topbarHeight;
+        --ytd-persistent-guide-width: 0;
+        --ytd-mini-guide-width: 0;
+        --ytd-grid-max-width: unset !important;
+        --ytd-rich-grid-items-per-row: @gridItemsperrow;
+        --ytd-grid-1-columns-width: 100%;
+        --ytd-grid-2-columns-width: 100%;
+        --ytd-grid-3-columns-width: 100%;
+        --ytd-grid-4-columns-width: 100%;
+        --ytd-grid-5-columns-width: 100%;
+        --ytd-grid-6-columns-width: 100%;
+        --ytd-shorts-width: 100%;
+        --t7f4f2c6d54836ce0: unset !important;
+        --t416e5931fc464589: unset !important;
+        --ytd-shorts-masthead-height: @topbarHeight;
+        --ytd-shorts-player-height: calc(100vh - @topbarHeight - var(--ytd-shorts-player-height-subtraction, 0px)) !important;
+        --ytd-watch-flexy-sidebar-width: @sidebarWidth;
+        --tf3fc855af2285f5f: unset !important;
+        --yt-page-navigation-container-color: none !important;
+        --ytd-margin-8x: unset !important;
+        --app-drawer-width: unset !important;
+        --yt-sys-color-baseline--base-background: #000;
+        --paper-dialog-background-color: #000;
+        --paper-menu-button-dropdown-background: #000;
+        --yt-delhi-bottom-controls-height-xsmall-width-mode: 24px;
+        --yt-delhi-bottom-controls-height: 24px;
+        --yt-live-chat-emoji-size: 16px;
+        --yt-delhi-pill-height: 24px;
+        --yt-sys-color-baseline--overlay-background-medium-light: none;
+        --yt-icon-width: unset !important;
+        --yt-icon-height: unset !important;
+        transition: unset !important;
+        border-radius: unset !important;
+        backdrop-filter: unset !important;
+        filter: unset !important;
+        text-shadow: unset !important;
+        box-shadow: unset !important;
+        min-width: 0 !important;
+        max-width: unset !important;
+        mask-image: unset !important;
+        -webkit-line-clamp: unset !important;
+        view-transition-name: unset !important;
+    }
+    
+    *:not(.ytp-progress-bar-container, .ytp-volume-panel, .ytp-preview) {
+        border: unset !important;
+    }
+    
+    h1 span, h1 yt-formatted-string {
+        font-family: monospace !important;
+        font-size: 24px !important;
+        line-height: unset !important;
+    }
+    
+    *:not(.ytp-caption-segment, h1 span, h1 yt-formatted-string, h1 a) {
+        font-family: monospace !important;
+        font-size: 14px !important;
+        line-height: unset !important;
+    }
+    
+    *:not(#description) {
+        min-height: 0 !important;
+    }
+    
+    *:not(#snippet) {
+        max-height: unset !important;
+    }
+    
+    *:not(yt-thumbnail-view-model, #page-header-banner-sizer.ytd-tabbed-page-header, #player-container-inner.ytd-watch-flexy) {
+        padding: 0 !important;
+    }
+    
+    *:not(#page-manager.ytd-app, animated-rolling-character, .caption-window, .ytp-chapter-hover-container, .ytp-storyboard-framepreview-img, .ytp-progress-bar-container, .ytp-chrome-controls .ytp-button, .ytp-replay-button, .ytp-volume-panel, .ytp-time-display) {
+        margin: 0 !important;
+    }
+    
+    html, body, ytd-app, #page-header.ytd-tabbed-page-header, #tabs-inner-container.ytd-tabbed-page-header {
+        background: @backgroundColor !important;
+    }
+    
+    .ytLockupMetadataViewModelTitle, .ytLockupMetadataViewModelMetadata {
+        color: @textColor !important;
+    }
+    
+    .ytPageHeaderViewModelContentMetadata .ytContentMetadataViewModelMetadataText .ytAttributedStringLinkInheritColor, #upload-info .ytAttributedStringLinkInheritColor, .ytListItemViewModelTitleWrapper .ytAttributedStringLinkInheritColor {
+        color: @textColor !important;
+    }
+    
+    #description-inline-expander .ytd-text-inline-expander .ytAttributedStringLinkInheritColor {
+        color: @textColor !important;
+    }
+    
+    .ytAttributionViewModelAttributionText .ytAttributedStringLinkCallToActionColor, #description-inline-expander .ytd-text-inline-expander .ytAttributedStringLink, a.yt-core-attributed-string__link.yt-core-attributed-string__link--call-to-action-color {
+        color: #00f !important;
+    }
+    
+    /* Topbar */
+    #background, #frosted-glass, ytd-topbar-logo-renderer #logo .style-scope.ytd-topbar-logo-renderer, #country-code, #guide-button, #voice-search-button, #end, .ytSearchboxComponentSearchButton .ytIconWrapperHost, .ytSearchboxComponentInnerSearchIcon, .ytIconWrapperHost.ytSuggestionComponentIcon, .ytSearchboxComponentReportButton, .ytSuggestionComponentMetadataContainer, .ytSuggestionComponentRightContainer, .ytSearchboxComponentClearButton span {
+        display: none !important;
+    }
+    
+    ytd-topbar-logo-renderer #logo:before {
+        & when (@enableName = 1) {
+			& when (@enableMotto = 1) {
+			    content: "YouTube:" !important;
+		    }
+            content: "YouTube"
+		}
+    }
+    
+    ytd-topbar-logo-renderer #logo:after {
+        & when (@enableMotto = 1) {
+			content: @motto;
+		}
+    }
+    
+    #logo.ytd-masthead {
+        width: 100%;
+    }
+    
+    .ytSearchboxComponentInputBox {
+        width: @searchbarWidth;
+    }
+    
+    .ytSearchboxComponentInputBox:before {
+        content: "["
+    }
+    
+    .ytSearchboxComponentInputBox:after {
+        content: "]"
+    }
+    
+    .ytSearchboxComponentClearButtonWrapper {
+        & when (@removeClearbtn = 1) {
+			display: none !important;
+		}
+    }
+    
+    .ytSearchboxComponentClearButtonWrapper, .ytSearchboxComponentClearButton {
+        width: unset !important;
+        height: unset !important;
+    }
+    
+    .ytSearchboxComponentClearButton:after {
+        content: "|Clear";
+        color: @topbartextColor;
+    }
+    
+    #container.ytd-masthead {
+        background: @topbarbackgroundColor;
+        height: @topbarHeight;
+        justify-content: unset;
+    }
+    
+    #center.ytd-masthead {
+        flex: unset;
+    }
+    
+    .ytSearchboxComponentSearchButton {
+        background: unset !important;
+        width: unset !important;
+    }
+    
+    .ytSearchboxComponentSearchButton:after {
+        content: "Search";
+    }
+    
+    .ytSuggestionComponentSuggestion {
+        height: unset !important;
+        text-transform: lowercase;
+        cursor: pointer;
+    }
+    
+    .ytSuggestionComponentText:before {
+        content: "|";
+    }
+    
+    .ytSearchboxComponentClearButtonWrapper:hover, .ytSearchboxComponentSearchButton:hover, .ytSuggestionComponentSuggestion:hover {
+        text-decoration-line: underline;
+    }
+    
+    .ytSuggestionComponentBold {
+        font-weight: normal;
+    }
+    
+    .ytSearchboxComponentHost {
+        height: @topbarHeight;
+        color: @topbartextColor;
+    }
+    
+    .ytSearchboxComponentSuggestionsContainer {
+        background: @topbarbackgroundColor;
+        top: @topbarHeight;
+    }
+    
+    .yt-simple-endpoint, .yt-simple-endpoint:hover {
+        color: @topbartextColor;
+    }
+    
+    /* Home */
+    tp-yt-app-drawer, ytd-mini-guide-renderer, ytd-feed-filter-chip-bar-renderer, ytd-rich-section-renderer:has(ytd-chips-shelf-with-video-shelf-renderer), yt-touch-feedback-shape, #video-preview, ytd-rich-item-renderer:has(.ytDismissibleItemReplacedContent), lockup-attachments-view-model, #subscribe, ytd-popup-container:has(ytd-checkbox-survey-renderer), .ytBadgeShapeIcon, .ytContentMetadataViewModelIcon, .ytAttributedStringInlineBlockMod:has([d="M12 1C5.925 1 1 5.925 1 12s4.925 11 11 11 11-4.925 11-11S18.075 1 12 1Zm5.707 7.293a1 1 0 010 1.414L10 17.414l-3.707-3.707a1 1 0 111.414-1.414L10 14.586l6.293-6.293a1 1 0 011.414 0Z"]), .ytSpecAvatarShapeLiveRing::after, .ytListItemViewModelCompact .ytListItemViewModelImageContainer, .ytSpecButtonShapeNextIcon, yt-list-item-view-model:has(path[d="M2 2.864v6.277a.5.5 0 00.748.434L9 6.002 2.748 2.43A.5.5 0 002 2.864ZM21 5h-9a1 1 0 100 2h9a1 1 0 100-2Zm0 6H9a1 1 0 000 2h12a1 1 0 000-2Zm0 6H9a1 1 0 000 2h12a1 1 0 000-2Z"]), #big-yoodle, ytd-single-option-survey-renderer, .ytContentMetadataViewModelLeadingIcon span, tp-yt-paper-tooltip {
+        display: none !important;
+    }
+    
+    ytd-browse[page-subtype="home"] {
+        & when (@noRecommended = 1) {
+            display: none;
+		}
+    }
+    
+    ytd-rich-section-renderer {
+        & when (@noshortsHome = 1) {
+            display: none;
+		}
+    }
+    
+    #contents.ytd-rich-grid-renderer {
+        width: 100%;
+        
+    }
+    
+    ytd-rich-item-renderer {
+        width: calc(100%/var(--ytd-rich-grid-items-per-row)) !important;
+    }
+    
+    .ytLockupMetadataViewModelAvatar {
+        & when (@pfpThumbnail = 1) {
+            position: relative;
+            top: -32px;
+		}
+        flex-shrink: 0;
+    }
+    
+    ytd-rich-grid-renderer #contents:not(:has(#items)) .ytLockupViewModelMetadata yt-lockup-metadata-view-model:has(.ytLockupMetadataViewModelAvatar) .ytLockupMetadataViewModelTextContainer {
+        & when (@pfpThumbnail = 1) {
+            position: relative;
+            left: -32px;
+		}
+    }
+    
+    .ytSpecAvatarShapeButtonMedium, .ytSpecAvatarShapeAvatarSizeMedium {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .ytSpecAvatarShapeLiveBadge {
+        width: 100%;
+        bottom: 0;
+        background: #f00;
+    }
+    
+    .ytLockupMetadataViewModelMenuButton {
+        top: 0;
+        right: 0;
+    }
+    
+    .ytLockupMetadataViewModelMenuButton .ytSpecButtonShapeNextSizeM.ytSpecButtonShapeNextIconButton {
+        width: unset;
+    }
+    
+    .ytLockupMetadataViewModelMenuButton button:before {
+        content: "▼";
+    }
+    
+    .ytBadgeShapeThumbnailDefault {
+        background: #000;
+    }
+    
+    .ytSearchboxComponentSuggestionsContainer {
+        & when (@searchsuggestOff = 1) {
+            display: none;
+		}
+    }
+    
+    .ytSpecAvatarShapeLiveBadgeMedium {
+        height: unset;
+    }
+    
+    .ytBadgeShapeThumbnailLive {
+        background: #f00;
+    }
+    
+    .ytContentMetadataViewModelLeadingIcon:before {
+        content: "►";
+    }
+    
+    /* Search Results */
+    #expandable-metadata, .ytCollectionsStackCollectionStack1, .ytCollectionsStackCollectionStack2, yt-interaction, ytd-horizontal-card-list-renderer, yt-icon, ytd-menu-service-item-download-renderer, ytd-menu-service-item-renderer:has(path[d="M2 2.864v6.277a.5.5 0 00.748.434L9 6.002 2.748 2.43A.5.5 0 002 2.864ZM21 5h-9a1 1 0 100 2h9a1 1 0 100-2Zm0 6H9a1 1 0 000 2h12a1 1 0 000-2Zm0 6H9a1 1 0 000 2h12a1 1 0 000-2Z"], path[d="M10 3.158V7.51c-5.428.223-8.27 3.75-8.875 11.199-.04.487-.07.975-.09 1.464l-.014.395c-.014.473.578.684.88.32.302-.368.61-.73.925-1.086l.244-.273c1.79-1.967 3-2.677 4.93-2.917a18.011 18.011 0 012-.112v4.346a1 1 0 001.646.763l9.805-8.297 1.55-1.31-1.55-1.31-9.805-8.297A1 1 0 0010 3.158Zm2 6.27v.002-4.116l7.904 6.688L12 18.689v-4.212l-2.023.024c-1.935.022-3.587.17-5.197 1.024a9 9 0 00-1.348.893c.355-1.947.916-3.39 1.63-4.425 1.062-1.541 2.607-2.385 5.02-2.485L12 9.428Z"]) {
+        display: none;
+    }
+    
+    grid-shelf-view-model {
+        & when (@noshortsResults = 1) {
+            display: none !important;
+		}
+    }
+    
+    ytd-video-renderer ytd-thumbnail.ytd-video-renderer {
+        max-width: none !important;
+        width: @thumbnailresultsSize;
+        flex: unset !important;
+        flex-basis: unset !important;
+    }
+    
+    ytd-two-column-search-results-renderer yt-lockup-view-model .ytLockupViewModelContentImage:has(yt-collections-stack) {
+        width: @thumbnailresultsSize !important;
+    }
+    
+    ytd-video-renderer #channel-info #img {
+        width: 32px !important;
+        height: 32px !important;
+    }
+    
+    ytd-channel-renderer #avatar-section.ytd-channel-renderer {
+        flex: unset !important;
+        flex-basis: unset !important;
+    }
+    
+    #avatar.ytd-channel-renderer {
+        width: @thumbnailresultsSize;
+        justify-content: right;
+    }
+    
+    yt-img-shadow.ytd-channel-renderer, yt-img-shadow.ytd-channel-renderer img {
+        width: 128px;
+        height: 128px;
+    }
+    
+    #info.ytd-channel-renderer {
+        justify-content: unset;
+    }
+    
+    .ytGridShelfViewModelGridShelfItem {
+        width: calc(100%/var(--ytd-rich-grid-items-per-row)) !important;
+    }
+    
+    ytd-search-header-renderer[has-chip-bar], #menu.ytd-video-renderer {
+        height: unset;
+    }
+    
+    #chips.yt-chip-cloud-renderer {
+        display: block;
+    }
+    
+    ytd-menu-renderer button:has(path[d="M12 4a2 2 0 100 4 2 2 0 000-4Zm0 6a2 2 0 100 4 2 2 0 000-4Zm0 6a2 2 0 100 4 2 2 0 000-4Z"]):before {
+        content: "▼";
+    }
+    
+    button.yt-icon-button {
+        width: unset;
+        height: unset;
+    }
+    
+    /* Channel */
+    yt-thumbnail-hover-overlay-toggle-actions-view-model, ytd-thumbnail-overlay-toggle-button-renderer, .tabGroupShapeSlider, yt-horizontal-list-renderer #left-arrow, yt-horizontal-list-renderer #right-arrow, #like-button.ytd-comment-action-buttons-renderer, #dislike-button.ytd-comment-action-buttons-renderer, #reply-button-end .ytSpecButtonShapeNextIcon, .ytFlexibleActionsViewModelAction, ytd-recognition-shelf-renderer, yt-light-shape, td.ytd-about-channel-renderer:has(yt-icon), .ytTabShapeTabBar, ytd-expandable-tab-renderer yt-icon-button button yt-icon, yt-download-list-item-view-model, #share-button, #header #menu, yt-attribution-view-model {
+        display: none !important;
+    }
+    
+    #wrapper.tp-yt-app-header-layout > [slot="header"] {
+        position: relative;
+        transform: none !important;
+    }
+    
+    .ytSpecAvatarShapeButtonGiant, .ytSpecAvatarShapeAvatarSizeGiant {
+        width: 128px;
+        height: 128px;
+    }
+    
+    .ytTabShapeHost, .ytChipShapeChip, tp-yt-paper-input.ytd-expandable-tab-renderer, #additional-info-container.ytd-about-channel-renderer tr.ytd-about-channel-renderer, #tabsContent.tp-yt-paper-tabs > :not(#selectionBar) {
+        height: unset;
+    }
+    
+    #scroll-container, yt-horizontal-list-renderer #scroll-container #items {
+        width: 100%;
+    }
+    
+    ytd-item-section-renderer #items yt-lockup-view-model, #scroll-container ytm-shorts-lockup-view-model-v2, ytd-grid-channel-renderer, ytd-post-renderer {
+        width: calc(100%/var(--ytd-rich-grid-items-per-row)) !important;
+    }
+    
+    yt-img-shadow.ytd-grid-channel-renderer, yt-img-shadow.ytd-grid-channel-renderer img {
+        width: 128px;
+        height: 128px;
+    }
+    
+    .ytPageHeaderViewModelHeadline {
+        align-items: unset;
+    }
+    
+    ytd-backstage-image-renderer {
+        width: 512px;
+    }
+    
+    ytd-backstage-image-renderer img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    ytd-post-renderer[uses-compact-lockup][attachment="image"] #body.ytd-post-renderer, ytd-post-renderer[uses-compact-lockup][attachment="uploaded-videos"] #body.ytd-post-renderer {
+        flex-direction: column;
+    }
+    
+    ytd-post-renderer[uses-compact-lockup][attachment="image"] #content-attachment.ytd-post-renderer ytd-backstage-image-renderer.ytd-post-renderer, ytd-post-renderer[uses-compact-lockup][attachment="uploaded-videos"] #content-attachment.ytd-post-renderer ytd-post-uploaded-video-renderer.ytd-post-renderer, ytd-post-renderer yt-img-shadow {
+        width: 100%;
+    }
+    
+    #left-arrow-container.ytd-post-multi-image-renderer {
+        left: -32px;
+    }
+    
+    #right-arrow-container.ytd-post-multi-image-renderer {
+        right: -32px;
+    }
+    
+    .arrow.ytd-post-multi-image-renderer {
+        width: 32px;
+        height: 100%;
+    }
+    
+    ytd-post-renderer * {
+        flex: none !important
+    }
+    
+    ytd-post-renderer[uses-compact-lockup] {
+        height: 100%;
+    }
+    
+    #author-thumbnail.ytd-backstage-post-renderer yt-img-shadow.ytd-backstage-post-renderer, #repost-author-thumbnail.ytd-shared-post-renderer yt-img-shadow.ytd-shared-post-renderer {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .ytChipShapeActive, .ytTabShapeTabSelected, yt-tab-shape:hover, chip-shape:hover {
+        color: @textColor;
+        background: unset;
+        text-decoration-line: underline;
+    }
+    
+    ytd-expandable-tab-renderer yt-icon-button button:before{
+        content: "Search";
+    }
+    
+    yt-icon-button.ytd-expandable-tab-renderer {
+        width: unset;
+        height: unset;
+    }
+    
+    #tabsContainer.tp-yt-paper-tabs {
+        position: inherit;
+        height: unset;
+    }
+    
+    .tabs-content.tp-yt-paper-tabs, tp-yt-paper-tabs.ytd-tabbed-page-header, #tabs-container.ytd-tabbed-page-header {
+        height: 100%;
+    }
+    
+    tp-yt-app-toolbar.ytd-tabbed-page-header, tp-yt-paper-input-container {
+        height: 19px;
+    }
+    
+    .input-wrapper:before {
+        content: "[";
+    }
+    
+    .input-wrapper:after {
+        content: "]";
+    }
+    
+    ytd-shelf-renderer:not([featured-promo]) #title-container.ytd-shelf-renderer, #header.ytd-reel-shelf-renderer, .ytSpecButtonShapeNextSizeS, .ytSpecButtonShapeNextSizeXs {
+        height: unset;
+    }
+    
+    /* Watch */
+    #fixed-side-menu, ytd-watch-flexy[show-fixed-side-menu][is-two-columns_]:not([full-bleed-player]) #columns.ytd-watch-flexy::after, ytd-comments-header-renderer #simple-box, .thread-hitbox.ytd-comment-thread-renderer, .threadline.ytd-comment-view-model, #like-button.ytd-comment-engagement-bar, #dislike-button.ytd-comment-engagement-bar, #reply-button-end.ytd-comment-engagement-bar, ytd-creator-heart-renderer yt-icon-button, .ytSubThreadSubThreadContent .ytSpecButtonShapeNextIcon, #sponsor-button, ytd-pinned-comment-badge-renderer yt-icon, ytd-author-comment-badge-renderer yt-icon, .ytwPinnedCommentBadgeRendererCommentPin, yt-subscribe-button-view-model, ytd-info-panel-content-renderer #menu, .inline-source.style-scope.ytd-info-panel-content-renderer, #header-menu, .header-icon, #donation-shelf, how-this-was-made-section-view-model, ytd-video-description-infocards-section-renderer, yt-linear-layout-view-model, #title.ytd-video-description-transcript-section-renderer, #sub-header.ytd-video-description-transcript-section-renderer, .ytwPinnedCommentBadgeRendererContent span, .ytTextCarouselItemViewModelImageType {
+        display: none !important;
+    }
+    
+    #related {
+        & when (@relatedOff = 1) {
+            display: none;
+		}
+    }
+    
+    .ytd-reel-shelf-renderer {
+        & when (@noshortsSidebar = 1) {
+            display: none;
+		}
+    }
+    
+    #related .ytLockupViewModelContentImage {
+        width: @thumbnailrelatedSize !important;
+    }
+    
+    #avatar.ytd-video-owner-renderer, #avatar.ytd-video-owner-renderer img, ytd-comment-view-model[comment-threading-enabled] #author-thumbnail.ytd-comment-view-model yt-img-shadow.ytd-comment-view-model {
+        width: 32px;
+        height: 32px;
+    }
+    
+    #custom-badge img {
+        width: 14px;
+        height: 14px;
+    }
+    
+    #vote-count-middle:after {
+        content: " Likes";
+    }
+    
+    #reply-button-end span:after {
+        content: " Replies";
+    }
+    
+    ytd-creator-heart-renderer:after {
+        content: "<3";
+        padding-left: 5px;
+    }
+    
+    .ytSpecButtonShapeNextSizeM, ytd-author-comment-badge-renderer, .header.ytd-info-panel-container-renderer {
+        height: unset;
+    }
+    
+    .ytSubThreadThreadline {
+        width: 32px !important;
+    }
+    
+    #author-thumbnail {
+        & when (@noCommentpfp = 1) {
+            display: none;
+		}
+    }
+    
+    ytd-info-panel-container-renderer[title-style="LINK"] .title.ytd-info-panel-container-renderer {
+        color: @textColor;
+    }
+    
+    #owner.ytd-watch-metadata, .top-level-buttons.ytd-menu-renderer, #actions.ytd-watch-metadata {
+        align-items: unset;
+    }
+    
+    #top-row #top-level-buttons-computed:before {
+        content: "Likes:";
+    }
+    
+    #top-level-buttons-computed:not(:has(#custom-ltm-like-button)) segmented-like-dislike-button-view-model button-view-model:before {
+        content: "???/";
+    }
+    
+    segmented-like-dislike-button-view-model button-view-model:before {
+        content: "/";
+    }
+    
+    ytd-menu-renderer button-view-model:before {
+        content: "•";
+    }
+    
+    ytd-comment-replies-renderer #creator-thumbnail.ytd-comment-replies-renderer {
+        display: none;
+    }
+    
+    .dot.ytd-comment-replies-renderer {
+        font-weight: unset;
+    }
+    
+    .ytwPinnedCommentBadgeRendererContent:after {
+        content: "Pinned";
+    }
+    
+    #upload-info.ytd-video-owner-renderer {
+        justify-content: unset;
+    }
+    
+    ytd-watch-metadata[has-teaser-carousel]:not([description-collapsed]) #teaser-carousel.ytd-watch-metadata, .ytSpecButtonShapeNextIconOnlyDefault, .ytSpecButtonShapeNextSizeM.ytSpecButtonShapeNextMainstagePadding.ytSpecButtonShapeNextIconButton.ytSpecButtonShapeNextSegmentedEnd, .ytSpecButtonShapeNextSizeM.ytSpecButtonShapeNextIconButton {
+        width: unset;
+    }
+    
+    yt-live-chat-header-renderer, ytd-engagement-panel-title-header-renderer[live-chat-engagement-panel] #header.ytd-engagement-panel-title-header-renderer {
+        height: unset;
+    }
+    
+    #live-chat-header-context-menu.yt-live-chat-header-renderer {
+        width: unset;
+        height: unset;
+    }
+    
+    #live-chat-header-context-menu.yt-live-chat-header-renderer button {
+        width: unset;
+    }
+    
+    #live-chat-header-context-menu.yt-live-chat-header-renderer button:before {
+        content: "▼";
+    }
+    
+    #close-button button:before {
+        content: "Close";
+    }
+    
+    #navigation-button button:before {
+        content: "Back";
+    }
+    
+    ytd-menu-renderer .ytSpecButtonShapeNextSizeM.ytSpecButtonShapeNextIconButton:before {
+        content: "Share";
+    }
+    
+    /* Comments */
+    .dot.ytd-comment-replies-renderer:before {
+        content: "Creator Response";
+        color: #000;
+        background: @textColor;
+    }
+    
+    ytd-comment-thread-renderer:not(:has(yt-attributed-string span)):has(ytw-comment-image-attachment-view-model), ytw-comment-image-attachment-view-model {
+        & when (@removeCommentcontainimg = keeptext) {
+            display: none !important;
+		}
+    }
+    
+    ytd-comment-thread-renderer:has(ytw-comment-image-attachment-view-model) {
+        & when (@removeCommentcontainimg = on) {
+            display: none;
+		}
+    }
+    
+    /* Player */
+    .ytp-fullscreen-grid, #cinematics-full-bleed-container, .ytp-autonav-toggle, .ytp-size-button, .ytp-play-button svg, .ytp-prev-button svg, .ytp-next-button svg, .ytp-volume-icon svg, .ytp-subtitles-button-icon, .ytp-settings-button svg, .ytp-fullscreen-button svg, .ytp-play-button:after, .ytp-fullscreen-button:after, .ytp-menuitem-icon, .ytp-seek-overlay, .ytp-bezel, .ytp-bezel-text-hide, .ytp-scrubber-container, .ytp-gradient-bottom, .ytp-delhi-modern .ytp-time-wrapper:not(.ytp-miniplayer-ui *)::after, .ytp-delhi-modern.ytp-delhi-horizontal-volume-controls .ytp-volume-area::after, .ytp-delhi-modern .ytp-chapter-title.ytp-button::after, .ytp-settings-button.ytp-hd-quality-badge::after, .ytp-chapter-title-chevron, .ytp-delhi-modern .ytp-prev-button:not(.ytp-miniplayer-button-container > *)::after, .ytp-delhi-modern .ytp-next-button:not(.ytp-miniplayer-button-container > *)::after, .ytp-fullscreen-metadata, .ytp-fullscreen-quick-actions, .ytp-tooltip-edu, .ytp-tooltip-progress-bar-pill-title[data-original-chapter], .ytp-tooltip-bottom-text, .ytp-speedmaster-user-edu, .ytp-large-play-button, sup, .ytp-menuitem:has(path[d="M12 .99C5.92 .99 1 5.92 1 11.99C1 18.07 5.92 22.99 12 22.99C18.07 22.99 23 18.07 23 11.99C23 5.92 18.07 .99 12 .99ZM12 2.99C14.38 2.99 16.67 3.94 18.36 5.63C20.05 7.32 21 9.61 21 11.99C21 14.38 20.05 16.67 18.36 18.36C16.67 20.05 14.38 20.99 12 20.99C9.61 20.99 7.32 20.05 5.63 18.36C3.94 16.67 3 14.38 3 11.99C3 9.61 3.94 7.32 5.63 5.63C7.32 3.94 9.61 2.99 12 2.99ZM14 6.00C13.73 6.00 13.48 6.10 13.29 6.29C13.10 6.48 13 6.73 13 7.00V17.00C13 17.26 13.10 17.52 13.29 17.70C13.48 17.89 13.73 18.00 14 18.00C14.26 18.00 14.51 17.89 14.70 17.70C14.89 17.52 15 17.26 15 17.00V7.00C15 6.73 14.89 6.48 14.70 6.29C14.51 6.10 14.26 6.00 14 6.00ZM10 8.00C9.73 8.00 9.48 8.10 9.29 8.29C9.10 8.48 9 8.73 9 9.00V15.00C9 15.26 9.10 15.52 9.29 15.70C9.48 15.89 9.73 16.00 10 16.00C10.26 16.00 10.51 15.89 10.70 15.70C10.89 15.52 11 15.26 11 15.00V9.00C11 8.73 10.89 8.48 10.70 8.29C10.51 8.10 10.26 8.00 10 8.00ZM18 9.00C17.73 9.00 17.48 9.10 17.29 9.29C17.10 9.48 17 9.73 17 10.00V14.00C17 14.26 17.10 14.52 17.29 14.70C17.48 14.89 17.73 15.00 18 15.00C18.26 15.00 18.51 14.89 18.70 14.70C18.89 14.52 19 14.26 19 14.00V10.00C19 9.73 18.89 9.48 18.70 9.29C18.51 9.10 18.26 9.00 18 9.00ZM6 10.00C5.73 10.00 5.48 10.10 5.29 10.29C5.10 10.48 5 10.73 5 11.00V13.00C5 13.26 5.10 13.52 5.29 13.70C5.48 13.89 5.73 14.00 6 14.00C6.26 14.00 6.51 13.89 6.70 13.70C6.89 13.52 7 13.26 7 13.00V11.00C7 10.73 6.89 10.48 6.70 10.29C6.51 10.10 6.26 10.00 6 10.00Z"], path[d="M11.48 2.14 3.91 6.68A6 6 0 0 0 1 11.83v.33a6 6 0 0 0 2.91 5.14l7.57 4.54A1 1 0 0 0 13 21V3a1.00 1.00 0 0 0-1.51-.85Zm6.88 2.07a1 1 0 0 0-.00 1.41 9 9 0 0 1 0 12.72 1 1 0 0 0 1.41 1.41 11 11 0 0 0 0-15.55 1 1 0 0 0-1.41 0ZM4.94 8.40l.00-.00L11 4.76v14.46l-6.05-3.63A4 4 0 0 1 3 12.16v-.33a4 4 0 0 1 1.94-3.42ZM15.53 7.05a1 1 0 0 0 0 1.41 5 5 0 0 1 0 7.07 1 1 0 0 0 1.41 1.41 6.99 6.99 0 0 0 0-9.9 1 1 0 0 0-1.41 0Z"], path[d="M12.33 1.00C12.22 1.00 12.11 1.00 12 1C5.92 1 1 5.92 1 12C1 18.07 5.92 23 12 23C13.90 23.00 15.78 22.50 17.44 21.55C19.10 20.61 20.48 19.25 21.46 17.61L21.64 17.29C22.06 16.52 21.21 15.73 20.35 15.88C18.76 16.15 17.12 15.94 15.66 15.27C14.19 14.59 12.97 13.49 12.14 12.11C11.31 10.73 10.91 9.13 11.01 7.52C11.11 5.91 11.69 4.37 12.67 3.09L12.89 2.83C13.45 2.16 13.20 1.03 12.33 1.00ZM15.56 2.60C15.45 2.84 15.43 3.11 15.51 3.36C15.59 3.61 15.77 3.82 16.01 3.94C16.91 4.39 17.73 4.99 18.44 5.71L18.73 6.03L18.80 6.10C18.99 6.27 19.22 6.36 19.47 6.37C19.72 6.37 19.96 6.28 20.15 6.12C20.33 5.95 20.45 5.72 20.48 5.48C20.51 5.23 20.44 4.98 20.29 4.78L20.23 4.70L19.87 4.31C19.01 3.43 18.01 2.70 16.90 2.15C16.67 2.03 16.39 2.01 16.14 2.10C15.89 2.18 15.68 2.36 15.56 2.60M10.24 3.17C9.42 4.64 8.99 6.31 9 8C9 13.42 13.32 17.84 18.71 17.99C17.86 18.93 16.83 19.69 15.67 20.21C14.52 20.73 13.26 21.00 12 21C9.76 21.00 7.60 20.17 5.95 18.67C4.29 17.17 3.25 15.10 3.03 12.88C2.81 10.65 3.43 8.43 4.76 6.63C6.09 4.84 8.05 3.60 10.24 3.17M21.16 7.88C20.93 7.96 20.73 8.12 20.61 8.34C20.49 8.55 20.45 8.81 20.50 9.05L20.53 9.15L20.66 9.56C20.93 10.53 21.04 11.54 20.98 12.55C20.97 12.81 21.06 13.06 21.23 13.26C21.41 13.45 21.65 13.57 21.92 13.59C22.18 13.60 22.44 13.52 22.63 13.34C22.83 13.17 22.95 12.93 22.97 12.67C23.05 11.44 22.92 10.20 22.58 9.02L22.43 8.51L22.39 8.42C22.29 8.19 22.11 8.01 21.88 7.91C21.65 7.81 21.40 7.80 21.16 7.88Z"], path[d="M12 1c1.44 0 2.87.28 4.21.83a11 11 0 0 1 3.45 2.27l-1.81 1.05A9 9 0 0 0 3 12a9 9 0 0 0 18-.00l-.01-.44a8.99 8.99 0 0 0-.14-1.20l1.81-1.05A11.00 11.00 0 0 1 10.51 22.9 11 11 0 0 1 12 1Zm7.08 6.25-7.96 3.25a1.74 1.74 0 1 0 1.73 2.99l6.8-5.26a.57.57 0 0 0-.56-.98Z"], path[d="M12 .5C11.73 .5 11.48 .60 11.29 .79C11.10 .98 11 1.23 11 1.5V3.5C11 3.76 11.10 4.01 11.29 4.20C11.48 4.39 11.73 4.5 12 4.5C12.26 4.5 12.51 4.39 12.70 4.20C12.89 4.01 13 3.76 13 3.5V1.5C13 1.23 12.89 .98 12.70 .79C12.51 .60 12.26 .5 12 .5ZM3.79 1.29C3.61 1.46 3.51 1.70 3.50 1.94C3.48 2.19 3.56 2.43 3.72 2.63L3.79 2.70L5.29 4.20L5.37 4.27C5.56 4.42 5.80 4.50 6.04 4.49C6.29 4.47 6.52 4.37 6.70 4.20C6.87 4.02 6.97 3.79 6.99 3.54C7.00 3.30 6.92 3.06 6.77 2.86L6.70 2.79L5.20 1.29L5.13 1.22C4.93 1.06 4.69 .98 4.44 1.00C4.20 1.01 3.96 1.11 3.79 1.29ZM18.86 1.22L18.79 1.29L17.29 2.79L17.22 2.86C17.07 3.06 16.99 3.30 17.00 3.54C17.01 3.79 17.12 4.02 17.29 4.20C17.47 4.37 17.70 4.48 17.95 4.49C18.19 4.50 18.43 4.42 18.63 4.27L18.70 4.20L20.20 2.70L20.27 2.63C20.42 2.43 20.50 2.19 20.49 1.95C20.48 1.70 20.37 1.47 20.20 1.29C20.02 1.12 19.79 1.01 19.54 1.00C19.30 .99 19.06 1.07 18.86 1.22ZM19.20 6.01L19 6H5L4.79 6.01C4.30 6.06 3.84 6.29 3.51 6.65C3.18 7.02 2.99 7.50 3 8V16L3.01 16.20C3.05 16.66 3.26 17.08 3.58 17.41C3.91 17.73 4.33 17.94 4.79 17.99L5 18H19L19.20 17.98C19.66 17.94 20.08 17.73 20.41 17.41C20.73 17.08 20.94 16.66 20.99 16.20L21 16V8C20.99 7.50 20.81 7.02 20.48 6.66C20.15 6.29 19.69 6.06 19.20 6.01ZM5 16V8H19V16H5ZM17.29 19.79C17.11 19.96 17.01 20.20 17.00 20.44C16.98 20.69 17.06 20.93 17.22 21.13L17.29 21.20L18.79 22.70L18.86 22.77C19.06 22.92 19.30 23.00 19.54 22.99C19.79 22.98 20.02 22.87 20.20 22.70C20.37 22.52 20.48 22.29 20.49 22.04C20.50 21.80 20.42 21.56 20.27 21.36L20.20 21.29L18.70 19.79L18.63 19.72C18.43 19.56 18.19 19.48 17.94 19.50C17.70 19.51 17.46 19.61 17.29 19.79ZM5.37 19.72L5.29 19.79L3.79 21.29L3.72 21.36C3.57 21.56 3.49 21.80 3.50 22.04C3.51 22.29 3.62 22.52 3.79 22.70C3.97 22.87 4.20 22.98 4.45 22.99C4.69 23.00 4.93 22.92 5.13 22.77L5.20 22.70L6.70 21.20L6.77 21.13C6.92 20.93 7.00 20.69 6.99 20.45C6.97 20.20 6.87 19.97 6.70 19.79C6.52 19.62 6.29 19.52 6.04 19.50C5.80 19.49 5.56 19.57 5.37 19.72ZM12 19.5C11.73 19.5 11.48 19.60 11.29 19.79C11.10 19.98 11 20.23 11 20.5V22.5C11 22.76 11.10 23.01 11.29 23.20C11.48 23.39 11.73 23.5 12 23.5C12.26 23.5 12.51 23.39 12.70 23.20C12.89 23.01 13 22.76 13 22.5V20.5C13 20.23 12.89 19.98 12.70 19.79C12.51 19.60 12.26 19.5 12 19.5Z"]), .ytp-menuitem-toggle-checkbox:after, .ytp-panel-footer, .ytp-menu-label-secondary, .interstitialViewModelModelContainer:before {
+        display: none !important;
+    }
+    
+    [style*="--ytd-masthead-height: 0px"] #page-manager.ytd-app {
+        --ytd-masthead-height: 0;
+    }
+    
+    .ytp-chrome-controls .ytp-button, .ytp-chrome-controls .ytp-play-button, .ytp-replay-button {
+        width: unset !important;
+        margin: 0 8px !important;
+    }
+    
+    .ytp-volume-panel {
+        margin: 0 8px !important;
+    }
+    
+    .ytp-play-button[data-title-no-tooltip="Play"]:before {
+        content: "Play" !important;
+    }
+    
+    .ytp-play-button[data-title-no-tooltip="Pause"]:before {
+        content: "Pause" !important;
+    }
+    
+    .ytp-play-button[data-title-no-tooltip="Replay"]:before {
+        content: "Replay" !important;
+    }
+    
+    .ytp-play-button[data-title-no-tooltip="Stop playback"]:before {
+        content: "Stop" !important;
+    }
+    
+    .ytp-prev-button:before {
+        content: "Prev" !important;
+    }
+    
+    .ytp-next-button:before {
+        content: "Next" !important;
+    }
+    
+    .ytp-volume-icon[data-title-no-tooltip*="ute"]:before {
+        content: "Mute";
+    }
+    
+    .ytp-subtitles-button:before {
+        content: "Subtitles" !important;
+    }
+    
+    .ytp-volume-icon[data-title-no-tooltip="Unmute"]:before, .ytp-settings-button[aria-expanded="true"]:before, .ytp-subtitles-button[aria-pressed="true"]:before, .ytp-prev-button:hover, .ytp-next-button:hover {
+        text-decoration-line: underline;
+    }
+    
+    .ytp-settings-button:before {
+        content: "Settings" !important;
+    }
+    
+    .ytp-fullscreen-button[data-title-no-tooltip="Full screen"]:before {
+        content: "Fullscreen" !important;
+    }
+    
+    .ytp-fullscreen-button[data-title-no-tooltip="Exit full screen"]:before {
+        content: "Exit" !important;
+    }
+    
+    .ytp-button:before {
+        top: unset !important;
+        left: unset !important;
+        transform: unset !important;
+        width: unset !important;
+        height: unset !important;
+        background: #000 !important;
+        position: static !important;
+        border-radius: unset !important;
+        color: #fff !important;
+    }
+    
+    .ytp-delhi-modern .ytp-chrome-controls .ytp-right-controls .ytp-button:hover::before {
+        transition: unset;
+    }
+    
+    .ytp-time-display {
+        display: flex !important;
+        margin: 0 8px !important;
+    }
+    
+    ytd-comment-view-model[use-small-avatars][engagement-panel] #author-thumbnail.ytd-comment-view-model yt-img-shadow.ytd-comment-view-model {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .ytp-progress-list, .ytp-timed-markers-container, #previewbar {
+        transform: none !important;
+    }
+    
+    .ytp-progress-bar-container {
+        height: 12px !important;
+        border: 4px solid #000;
+        background: #000;
+        margin-left: -4px !important;
+    }
+    
+    .ytp-volume-panel, .ytp-volume-slider, .ytp-volume-slider-handle::after, .ytp-volume-slider-handle::before {
+        height: 12px !important;
+    }
+    
+    .ytp-volume-slider-handle::after, .ytp-volume-slider-handle::before {
+        margin-top: -6px !important;
+    }
+    
+    .ytp-volume-slider-handle::after {
+        background: #ffffff50 !important;
+    }
+    
+    .ytp-volume-slider-handle::before {
+        background: #ffffff !important;
+    }
+    
+    .ytp-volume-panel {
+        width: 52px;
+        border: 4px solid #000;
+        background: #000;
+    }
+    
+    .ytp-volume-slider-handle {
+        top: 0;
+    }
+    
+    .ytp-play-progress, .ytp-swatch-background-color, .ytProgressBarLineProgressBarPlayed {
+        background: #fff;
+    }
+    
+    .ytp-menuitem, .ytp-delhi-modern .ytp-time-wrapper:not(.ytp-miniplayer-ui *) {
+        height: auto !important;
+    }
+    
+    .ytp-progress-list {
+        background: #ffffff50 !important;
+    }
+    
+    .ytp-drag .ytp-exp-chapter-hover-effect, .ytp-delhi-modern.ytp-progress-bar-hover .ytp-progress-bar-container:not([aria-disabled="true"]) .ytp-exp-chapter-hover-effect, .ytp-delhi-modern.ytp-progress-bar-hover .ytp-progress-bar-container:not([aria-disabled="true"]).ytp-timed-markers-enabled .ytp-progress-list, .ytp-drag .ytp-exp-chapter-hover-effect, .ytp-exp-chapter-hover-container:hover, .ytp-progress-bar-container:hover:not([aria-disabled="true"]) .ytp-exp-chapter-hover-effect, .ytp-progress-bar-container:hover:not([aria-disabled="true"]).ytp-timed-markers-enabled .ytp-progress-list {
+        transform: unset !important;
+        transition: unset !important;
+    }
+    
+    .ytp-volume-area, .ytp-prev-button, .ytp-next-button {
+        display: flex !important;
+        align-items: center;
+    }
+    
+    .ytp-time-contents, .ytp-chapter-title-content, .ytp-popup {
+        background: #000 !important;
+    }
+    
+    .ytp-overlays-container {
+        inset: 0 0 24 !important;
+    }
+    
+    .ytp-chrome-bottom {
+        height: 24px !important;
+    }
+    
+    .ytp-tooltip-progress-bar-pill, .ytp-tooltip-title {
+        top: unset !important;
+        background: #000 !important;
+    }
+    
+    .ytp-tooltip-title {
+        width: unset !important;
+        right: unset !important;
+    }
+    
+    .ytp-preview {
+        top: unset !important;
+        bottom: 40px !important;
+        border: 4px solid #000;
+        background: #000;
+    }
+    
+    .ytp-tooltip-text-wrapper {
+        bottom: 0 !important;
+    }
+    
+    .ytp-menuitem-toggle-checkbox {
+        width: 16px !important;
+        height: 16px !important;
+    }
+    
+    .ytp-contextmenu .ytp-menuitem[aria-checked="true"] .ytp-menuitem-toggle-checkbox, .ytp-menuitem[aria-checked="true"] .ytp-menuitem-toggle-checkbox, .ytp-menuitem[aria-checked="true"] .ytp-menuitem-toggle-checkbox {
+        background: #fff !important;
+    }
+    
+    .ytp-menuitem:not([aria-disabled="true"]):hover {
+        background: none;
+        text-decoration-line: underline;
+    }
+    
+    .ytp-settings-menu {
+        bottom: 48px !important;
+        right: 8px !important;
+    }
+    
+    .ytp-menuitem-content, .ytp-menuitem-label {
+        background: none !important;
+    }
+    
+    .ytp-panel-header, .ytp-panel-back-button-container, .ytp-panel-back-button {
+        width: unset;
+        height: unset;
+    }
+    
+    .ytp-panel-back-button:before {
+        content: "<-"
+    }
+    
+    .ytp-heat-map-container {
+        bottom: 16px !important;
+    }
+    
+    #player-container-inner.ytd-watch-flexy {
+        padding-top: calc(9 / 16 * 100%);
+    }
+    
+    .interstitialViewModelModelContainer {
+        justify-content: unset;
+    }
+    
+    /* Shorts */
+    player-disclosure-view-model:before {
+        content: "INCLUDES PAID PROMOTION";
+        color: #f00;
+        font-weight: bold;
+        text-decoration-line: underline;
+    }
+    
+    .reel-video-in-sequence-thumbnail, .ytReelChannelBarViewModelReelSubscribeButton, .ytReelMetapanelViewModelMetapanelItem yt-reel-carousel-view-model, yt-progress-bar-playhead, .ytReelMetapanelViewModelMetapanelItem yt-shorts-suggested-action-view-model {
+        display: none !important;
+    }
+    
+    .ytReelPlayerOverlayViewModelMetadataContainer {
+        background: unset;
+        width: unset;
+    }
+    
+    .ytReelPlayerOverlayViewModelActionsContainer {
+        flex-grow: 0 !important;
+    }
+    
+    reel-action-bar-view-model like-button-view-model, reel-action-bar-view-model dislike-button-view-model, reel-action-bar-view-model button-view-model:not(:has(path[d="M1 6a4 4 0 014-4h14a4 4 0 014 4v10a4 4 0 01-4 4h-4.8l-5.105 2.836A1.41 1.41 0 017 21.604V20H5a4 4 0 01-4-4V6Zm8 12v2.601l4.229-2.35.453-.251H19a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2h4ZM7 8a1 1 0 000 2h10a1 1 0 100-2H7Zm-1 5a1 1 0 001 1h6a1 1 0 000-2H7a1 1 0 00-1 1Z"])), reel-action-bar-view-model button-view-model button, reel-action-bar-view-model pivot-button-view-model {
+        display: none !important;
+    }
+    
+    button-view-model .ytSpecButtonShapeWithLabelLabel:after {
+        content: "replies";
+    }
+    
+    .reel-video-in-sequence-new.ytd-shorts {
+        width: unset;
+    }
+    
+    ytd-engagement-panel-section-list-renderer {
+        height: 100%;
+    }
+    
+    .ytProgressBarLineProgressBarLine {
+        height: 24px;
+    }
+    
+    .reel-video-in-sequence-new.ytd-shorts {
+        width: unset;
+    }
+    
+    .desktopShortsPlayerControlsHost {
+        left: 0;
+        right: 0;
+    }
+    
+    /* Playlist */
+    ytd-browse[mini-guide-visible] .page-header-sidebar.ytd-browse, ytd-browse[mini-guide-visible] ytd-playlist-header-renderer.ytd-browse, ytd-browse[mini-guide-visible] ytd-playlist-sidebar-renderer.ytd-browse {
+        left: 0;
+    }
+    
+    ytd-browse[has-page-header-sidebar] ytd-two-column-browse-results-renderer.ytd-browse, ytd-browse[page-subtype="playlist"] ytd-two-column-browse-results-renderer.ytd-browse, #alerts {
+        left: 360px;
+        position: inherit;
+    }
+    
+    .ytItemSectionRendererStickyHeader {
+        position: static;
+    }
+    
+    /* Loading */
+    #ghost-cards, #home-container-skeleton, #guide-skeleton, #home-chips,#watch-page-skeleton, #info-skeleton, #meta-skeleton, ytd-masthead.shell, #ghost-comment-section, .ghost-grid, #masthead-skeleton-icons, #spinnerContainer {
+        display: none !important;
+    }
+    
+    #progress.yt-page-navigation-progress {
+        background: @navigationprogressColor;
+        height: @navigationprogressHeight;
+        & when (@navigationprogressOff = 1) {
+            display: none;
+		}
+    }
+    
+    /* LocalTube Manager */
+    #custom-ltm-like-button {
+        padding: none
+    }
+    
+    #custom-ltm-like-button:has(path[d="M7.24 11v9H5.63c-.9 0-1.62-.72-1.62-1.61v-5.77c0-.89.73-1.62 1.62-1.62zM18.5 9.5h-4.78V6c0-1.1-.9-2-1.99-2h-.09c-.4 0-.76.24-.92.61L7.99 11v9h9.2c.73 0 1.35-.52 1.48-1.24l1.32-7.5c.16-.92-.54-1.76-1.48-1.76Z"]) {
+        text-decoration-line: underline;
+    }
+    
+    #custom-ltm-like-button-icon, #custom-ltm-add-to-local-playlist-button span {
+        display: none;
+    }
+    
+    #custom-ltm-subscribe-button, #custom-ltm-subscribed-button, #custom-ltm-like-button, #custom-ltm-add-to-local-playlist-button {
+        color: @textColor;
+        background: unset !important;
+        align-items: unset
+    }
+    
+    #custom-ltm-subscribe-button:hover, #custom-ltm-subscribed-button:hover, #custom-ltm-like-button:hover, #custom-ltm-add-to-local-playlist-button:hover, button:hover {
+        text-decoration-line: underline;
+    }
+    
+    yt-flexible-actions-view-model:not(:has(#custom-ltm-subscribe-button, #custom-ltm-subscribed-button)):after {
+        content: "Refresh...";
+        color: @textColor;
+    }
+    
+    /* Proper Description */
+    ytd-watch-metadata #owner #avatar {
+            width: 32px;
+            height: 32px;
+    }
+    
+    ytd-watch-metadata #top-row > #info > * {
+        color: @textColor;
+    }
+    
+    ytd-watch-metadata #title h1 {
+        font-weight: bold;
+    }
+    
+    ytd-watch-metadata #flexible-item-buttons button, ytd-watch-metadata #flexible-item-buttons a, .less-button.ytd-video-secondary-info-renderer, .more-button.ytd-video-secondary-info-renderer {
+        text-transform: unset;
+    }
+    
+    /* Google */
+    a[href*="google.com"] {
+        display: none !important;
+    }
+    
+    /* Others */
+    .ryd-premium-teaser, .ryd-tooltip {
+        display: none !important;
+    }
+}
