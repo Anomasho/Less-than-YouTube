@@ -1,7 +1,7 @@
 # Less than YouTube
 YouTube without the boring corporate feeling
 # about
-vorapis v3 (the extension that makes youtube uses the old layout) won't work properly without an account and also im using extensions that may not work for it so i decided to make a userstyle idk
+Vorapis v3 (the extension that makes youtube uses the old layout) doesn't work properly without an account and I'm using some other extensions that may not work properly so I decided to make a userstyle because of this idk.
 # requirements (aka what i use for this)
 https://github.com/abhishekY495/localtube-manager
 https://github.com/tadwohlrapp/disable-youtube-autoplay
