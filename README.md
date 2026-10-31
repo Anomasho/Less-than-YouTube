@@ -1,5 +1,5 @@
 # Less than YouTube
-YouTube without the boring corporate feeling
+YouTube without the generic corporate layout feeling
 ## about
 The userstyles that I found especially the ones that tried to mimic the old layout usually sucks and Vorapis v3 doesn't work properly for me without having an account log in and I'm using some other extensions that may not work properly for it so I decided to make a userstyle on my own. The community in those are just people that are usually obsessed over their nostalgia who are trying to pretend that they are a decade behind but they don't have the knowledge of what the actual old internet was (and actually act like one) so instead of choosing what year of the layout I want, I decided to go for terminal-like, no icons, and removing all the features that are useless for myself.
 ## requirements (aka what i use for this)
