@@ -24,4 +24,5 @@ I don't like the YouTube's current layout and the userstyles that I found especi
 ## known issue
 - There may be some issues without LocalTube Manager.
 - Video player and some tweaks have some issues.
-- Live stream and Shorts are remained unfinished.
+- Some features like Shorts may be remained unfinished.
+- YouTube may update their layout that might break.
