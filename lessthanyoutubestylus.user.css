@@ -4,7 +4,6 @@
 @version        0.9
 @description    YouTube without the boring corporate feeling
 @author         Anomasho
-
 @preprocessor   less
 @var            color textColor "Text Color" #fff
 @var            color backgroundColor "Background Color" #000
@@ -415,7 +414,7 @@
     }
     
     /* Channel */
-    yt-thumbnail-hover-overlay-toggle-actions-view-model, ytd-thumbnail-overlay-toggle-button-renderer, .tabGroupShapeSlider, yt-horizontal-list-renderer #left-arrow, yt-horizontal-list-renderer #right-arrow, #like-button.ytd-comment-action-buttons-renderer, #dislike-button.ytd-comment-action-buttons-renderer, #reply-button-end .ytSpecButtonShapeNextIcon, .ytFlexibleActionsViewModelAction, ytd-recognition-shelf-renderer, yt-light-shape, td.ytd-about-channel-renderer:has(yt-icon), .ytTabShapeTabBar, ytd-expandable-tab-renderer yt-icon-button button yt-icon, yt-download-list-item-view-model, #share-button, #header #menu, yt-attribution-view-model {
+    yt-thumbnail-hover-overlay-toggle-actions-view-model, ytd-thumbnail-overlay-toggle-button-renderer, .tabGroupShapeSlider, yt-horizontal-list-renderer #left-arrow, yt-horizontal-list-renderer #right-arrow, #like-button.ytd-comment-action-buttons-renderer, #dislike-button.ytd-comment-action-buttons-renderer, #reply-button-end .ytSpecButtonShapeNextIcon, .ytFlexibleActionsViewModelAction, ytd-recognition-shelf-renderer, yt-light-shape, td.ytd-about-channel-renderer:has(yt-icon), .ytTabShapeTabBar, ytd-expandable-tab-renderer yt-icon-button button yt-icon, yt-download-list-item-view-model, #share-button, yt-attribution-view-model {
         display: none !important;
     }
     
@@ -665,6 +664,10 @@
     }
     
     /* Comments */
+    tp-yt-paper-ripple, .animating {
+        display: none;
+    }
+    
     .dot.ytd-comment-replies-renderer:before {
         content: "Creator Response";
         color: #000;
