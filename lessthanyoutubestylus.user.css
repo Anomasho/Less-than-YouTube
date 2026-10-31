@@ -5,6 +5,7 @@
 @description    YouTube without the generic corporate layout feeling
 @author         Anomasho
 @preprocessor   less
+@var            checkbox localtubeManager "Using LocalTube Manager" 0
 @var            color textColor "Text Color" #fff
 @var            color backgroundColor "Background Color" #000
 @var            color topbartextColor "Topbar Text Color" #fff
@@ -100,7 +101,8 @@
         filter: unset !important;
         text-shadow: unset !important;
         box-shadow: unset !important;
-        min-width: 0 !important;
+        min-height: unset !important;
+        min-width: unset !important;
         max-width: unset !important;
         mask-image: unset !important;
         -webkit-line-clamp: unset !important;
@@ -121,10 +123,6 @@
         font-family: monospace !important;
         font-size: 14px !important;
         line-height: unset !important;
-    }
-    
-    *:not(#description) {
-        min-height: 0 !important;
     }
     
     *:not(#snippet) {
@@ -440,8 +438,14 @@
     }
     
     /* Channel */
-    yt-thumbnail-hover-overlay-toggle-actions-view-model, ytd-thumbnail-overlay-toggle-button-renderer, .tabGroupShapeSlider, yt-horizontal-list-renderer #left-arrow, yt-horizontal-list-renderer #right-arrow, #like-button.ytd-comment-action-buttons-renderer, #dislike-button.ytd-comment-action-buttons-renderer, #reply-button-end .ytSpecButtonShapeNextIcon, .ytFlexibleActionsViewModelAction, ytd-recognition-shelf-renderer, yt-light-shape, td.ytd-about-channel-renderer:has(yt-icon), .ytTabShapeTabBar, ytd-expandable-tab-renderer yt-icon-button button yt-icon, yt-download-list-item-view-model, #share-button, yt-attribution-view-model, ytd-item-section-renderer #menu, .ytTruncatedTextAbsoluteButton, .image-icon-container {
+    yt-thumbnail-hover-overlay-toggle-actions-view-model, ytd-thumbnail-overlay-toggle-button-renderer, .tabGroupShapeSlider, yt-horizontal-list-renderer #left-arrow, yt-horizontal-list-renderer #right-arrow, #like-button.ytd-comment-action-buttons-renderer, #dislike-button.ytd-comment-action-buttons-renderer, #reply-button-end .ytSpecButtonShapeNextIcon, ytd-recognition-shelf-renderer, yt-light-shape, td.ytd-about-channel-renderer:has(yt-icon), .ytTabShapeTabBar, ytd-expandable-tab-renderer yt-icon-button button yt-icon, yt-download-list-item-view-model, #share-button, yt-attribution-view-model, ytd-item-section-renderer ytd-reel-shelf-renderer #menu, .ytTruncatedTextAbsoluteButton, .image-icon-container {
         display: none !important;
+    }
+    
+    .ytFlexibleActionsViewModelAction {
+        & when (@localtubeManager = 1) {
+            display: none;
+		}
     }
     
     #wrapper.tp-yt-app-header-layout > [slot="header"] {
@@ -563,7 +567,7 @@
     }
     
     /* Watch */
-    #fixed-side-menu, ytd-watch-flexy[show-fixed-side-menu][is-two-columns_]:not([full-bleed-player]) #columns.ytd-watch-flexy::after, ytd-comments-header-renderer #simple-box, .thread-hitbox.ytd-comment-thread-renderer, .threadline.ytd-comment-view-model, #like-button.ytd-comment-engagement-bar, #dislike-button.ytd-comment-engagement-bar, #reply-button-end.ytd-comment-engagement-bar, ytd-creator-heart-renderer yt-icon-button, .ytSubThreadSubThreadContent .ytSpecButtonShapeNextIcon, #sponsor-button, ytd-pinned-comment-badge-renderer yt-icon, ytd-author-comment-badge-renderer yt-icon, .ytwPinnedCommentBadgeRendererCommentPin, yt-subscribe-button-view-model, ytd-info-panel-content-renderer #menu, .inline-source.style-scope.ytd-info-panel-content-renderer, #header-menu, .header-icon, #donation-shelf, how-this-was-made-section-view-model, ytd-video-description-infocards-section-renderer, yt-linear-layout-view-model, #title.ytd-video-description-transcript-section-renderer, #sub-header.ytd-video-description-transcript-section-renderer, .ytwPinnedCommentBadgeRendererContent span, .ytTextCarouselItemViewModelImageType {
+    #fixed-side-menu, ytd-watch-flexy[show-fixed-side-menu][is-two-columns_]:not([full-bleed-player]) #columns.ytd-watch-flexy::after, ytd-comments-header-renderer #simple-box, .thread-hitbox.ytd-comment-thread-renderer, .threadline.ytd-comment-view-model, #like-button.ytd-comment-engagement-bar, #dislike-button.ytd-comment-engagement-bar, #reply-button-end.ytd-comment-engagement-bar, ytd-creator-heart-renderer yt-icon-button, .ytSubThreadSubThreadContent .ytSpecButtonShapeNextIcon, #sponsor-button, ytd-pinned-comment-badge-renderer yt-icon, ytd-author-comment-badge-renderer yt-icon, .ytwPinnedCommentBadgeRendererCommentPin, yt-subscribe-button-view-model, ytd-info-panel-content-renderer #menu, .inline-source.style-scope.ytd-info-panel-content-renderer, #header-menu, .header-icon, #donation-shelf, how-this-was-made-section-view-model, ytd-video-description-infocards-section-renderer, yt-linear-layout-view-model, #title.ytd-video-description-transcript-section-renderer, #sub-header.ytd-video-description-transcript-section-renderer, .ytwPinnedCommentBadgeRendererContent span, .ytTextCarouselItemViewModelImageType, yt-tooltip, #ellipsis, #expand {
         display: none !important;
     }
     
@@ -633,10 +637,15 @@
     }
     
     #top-level-buttons-computed:not(:has(#custom-ltm-like-button)) segmented-like-dislike-button-view-model button-view-model:before {
-        content: "???/";
+        & when (@localtubeManager = 1) {
+            content: "???/";
+        }
+    }
+    #top-level-buttons-computed segmented-like-dislike-button-view-model like-button-view-model button-view-model:before {
+        content: "";
     }
     
-    segmented-like-dislike-button-view-model button-view-model:before {
+    #top-level-buttons-computed segmented-like-dislike-button-view-model button-view-model:before {
         content: "/";
     }
     
@@ -689,6 +698,10 @@
         content: "Back";
     }
     
+    ytd-menu-renderer dislike-button-view-model .ytSpecButtonShapeNextSizeM.ytSpecButtonShapeNextIconButton:before {
+        content: "Dislike";
+    }
+    
     ytd-menu-renderer .ytSpecButtonShapeNextSizeM.ytSpecButtonShapeNextIconButton:before {
         content: "Share";
     }
@@ -697,11 +710,15 @@
         background: none !important;
     }
     
+    ytd-text-inline-expander:not(:has(.desc_toggles)) #snippet:hover {
+        text-decoration-line: underline;
+    }
+    
+    /* Live Chat */
     .ytvlLiveLeaderboardItemViewModelRankNumberContainer {
         width: unset;
     }
     
-    /* Live Chat */
     .ytSpecAvatarShapeButton48, .ytSpecAvatarShapeAvatarSize48 {
         width: 32px;
         height: 32px;
@@ -711,7 +728,7 @@
         align-self: unset;
     }
     
-    #content.ytd-engagement-panel-section-list-renderer {
+    yt-live-chat-renderer #content.ytd-engagement-panel-section-list-renderer {
         height: 0;
     }
     
@@ -1091,8 +1108,10 @@
     }
     
     yt-flexible-actions-view-model:not(:has(#custom-ltm-subscribe-button, #custom-ltm-subscribed-button)):after {
-        content: "Refresh...";
-        color: @textColor;
+        & when (@localtubeManager = 1) {
+            content: "Refresh...";
+            color: @textColor;
+		}
     }
     
     /* Proper Description */
@@ -1109,7 +1128,7 @@
         font-weight: bold;
     }
     
-    ytd-watch-metadata #flexible-item-buttons button, ytd-watch-metadata #flexible-item-buttons a, .less-button.ytd-video-secondary-info-renderer, .more-button.ytd-video-secondary-info-renderer {
+    ytd-watch-metadata #flexible-item-buttons button, ytd-watch-metadata #flexible-item-buttons a, .less-button.ytd-video-secondary-info-renderer, .more-button.ytd-video-secondary-info-renderer, ytd-watch-metadata #top-level-buttons-computed button {
         text-transform: unset;
     }
     
