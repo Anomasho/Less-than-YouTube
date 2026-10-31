@@ -2,7 +2,7 @@
 @name           Less than YouTube
 @namespace      https://github.com/Anomasho/Less-than-YouTube
 @version        0.9
-@description    YouTube without the boring corporate feeling
+@description    YouTube without the generic corporate layout feeling
 @author         Anomasho
 @preprocessor   less
 @var            color textColor "Text Color" #fff
@@ -21,15 +21,17 @@
 @var            checkbox searchsuggestOff "No Search Suggestions" 0
 @var            checkbox noRecommended "No Recommended Homepage" 0
 @var            checkbox noshortsHome "No Shorts on Homepage" 1
+@var            checkbox nopfpHomepage "No Profile Picture on Homepage" 0
 @var            checkbox pfpThumbnail "Profile Picture on Thumbnail Homepage" 1
 @var            number gridItemsperrow "Grid Item Per Row" 6
 @var            text thumbnailresultsSize "Thumbnail Results Size" 336px
 @var            checkbox noshortsResults "No Shorts on Search Results" 0
+@var            checkbox nopfpResults "No Profile Picture on Search Results" 0
 @var            text sidebarWidth "Sidebar Width" 384px
 @var            checkbox noshortsSidebar "No Shorts on Sidebar" 1
 @var            checkbox relatedOff "Turn Off Related Sidebar" 1
 @var            text thumbnailrelatedSize "Thumbnail Related Sidebar Size" 168px
-@var            checkbox noCommentpfp "No Comment Profile Pictures" 0
+@var            checkbox nopfpComment "No Comment Profile Pictures" 0
 @var            select removeCommentcontainimg "Remove Comment contains an image (experimental)" ["off:Off", "keeptext:Keep text", "on:On"]
 ==/UserStyle== */
 
@@ -44,6 +46,7 @@
         --yt-watch-info-text-endpoint-color: @textColor !important;
         --yt-endpoint-color: @textColor !important;
         --yt-live-chat-secondary-text-color: @textColor !important;
+        --yt-sys-color-baseline--text-primary-inverse: #000 !important;
         --t2d807bb79e75606d: #00f !important;
         --t904a88c623ca27ab: #0f0 !important;
         --t3e41d7b17b187f69: unset !important;
@@ -286,9 +289,15 @@
     }
     
     .ytLockupMetadataViewModelAvatar {
+        & when (@nopfpHomepage = 1) {
+            display: none !important;
+		}
         & when (@pfpThumbnail = 1) {
             position: relative;
             top: -32px;
+            & when (@nopfpHomepage = 1) {
+                top: 0;
+		    }
 		}
         flex-shrink: 0;
     }
@@ -297,6 +306,9 @@
         & when (@pfpThumbnail = 1) {
             position: relative;
             left: -32px;
+            & when (@nopfpHomepage = 1) {
+                left: 0;
+		    }
 		}
     }
     
@@ -325,7 +337,7 @@
     }
     
     .ytBadgeShapeThumbnailDefault {
-        background: #000;
+        background: #000 !important;
     }
     
     .ytSearchboxComponentSuggestionsContainer {
@@ -339,7 +351,7 @@
     }
     
     .ytBadgeShapeThumbnailLive {
-        background: #f00;
+        background: #f00 !important;
     }
     
     .ytContentMetadataViewModelLeadingIcon:before {
@@ -347,7 +359,7 @@
     }
     
     /* Search Results */
-    #expandable-metadata, .ytCollectionsStackCollectionStack1, .ytCollectionsStackCollectionStack2, yt-interaction, ytd-horizontal-card-list-renderer, yt-icon, ytd-menu-service-item-download-renderer, ytd-menu-service-item-renderer:has(path[d="M2 2.864v6.277a.5.5 0 00.748.434L9 6.002 2.748 2.43A.5.5 0 002 2.864ZM21 5h-9a1 1 0 100 2h9a1 1 0 100-2Zm0 6H9a1 1 0 000 2h12a1 1 0 000-2Zm0 6H9a1 1 0 000 2h12a1 1 0 000-2Z"], path[d="M10 3.158V7.51c-5.428.223-8.27 3.75-8.875 11.199-.04.487-.07.975-.09 1.464l-.014.395c-.014.473.578.684.88.32.302-.368.61-.73.925-1.086l.244-.273c1.79-1.967 3-2.677 4.93-2.917a18.011 18.011 0 012-.112v4.346a1 1 0 001.646.763l9.805-8.297 1.55-1.31-1.55-1.31-9.805-8.297A1 1 0 0010 3.158Zm2 6.27v.002-4.116l7.904 6.688L12 18.689v-4.212l-2.023.024c-1.935.022-3.587.17-5.197 1.024a9 9 0 00-1.348.893c.355-1.947.916-3.39 1.63-4.425 1.062-1.541 2.607-2.385 5.02-2.485L12 9.428Z"]) {
+    #expandable-metadata, .ytCollectionsStackCollectionStack1, .ytCollectionsStackCollectionStack2, yt-interaction, ytd-horizontal-card-list-renderer, yt-icon, ytd-menu-service-item-download-renderer, ytd-menu-service-item-renderer:has(path[d="M2 2.864v6.277a.5.5 0 00.748.434L9 6.002 2.748 2.43A.5.5 0 002 2.864ZM21 5h-9a1 1 0 100 2h9a1 1 0 100-2Zm0 6H9a1 1 0 000 2h12a1 1 0 000-2Zm0 6H9a1 1 0 000 2h12a1 1 0 000-2Z"], path[d="M10 3.158V7.51c-5.428.223-8.27 3.75-8.875 11.199-.04.487-.07.975-.09 1.464l-.014.395c-.014.473.578.684.88.32.302-.368.61-.73.925-1.086l.244-.273c1.79-1.967 3-2.677 4.93-2.917a18.011 18.011 0 012-.112v4.346a1 1 0 001.646.763l9.805-8.297 1.55-1.31-1.55-1.31-9.805-8.297A1 1 0 0010 3.158Zm2 6.27v.002-4.116l7.904 6.688L12 18.689v-4.212l-2.023.024c-1.935.022-3.587.17-5.197 1.024a9 9 0 00-1.348.893c.355-1.947.916-3.39 1.63-4.425 1.062-1.541 2.607-2.385 5.02-2.485L12 9.428Z"]), .ytShelfHeaderLayoutLeadingImage.ytShelfHeaderLayoutLeadingImageRounded {
         display: none;
     }
     
@@ -413,8 +425,22 @@
         height: unset;
     }
     
+    ytd-video-renderer[use-search-ui] #channel-info.ytd-video-renderer {
+        align-items: unset;
+    }
+    
+    #attributed-channel-name.ytd-video-renderer, #channel-name.ytd-video-renderer {
+        align-self: unset;
+    }
+    
+    #channel-thumbnail {
+        & when (@nopfpResults = 1) {
+            display: none;
+		}
+    }
+    
     /* Channel */
-    yt-thumbnail-hover-overlay-toggle-actions-view-model, ytd-thumbnail-overlay-toggle-button-renderer, .tabGroupShapeSlider, yt-horizontal-list-renderer #left-arrow, yt-horizontal-list-renderer #right-arrow, #like-button.ytd-comment-action-buttons-renderer, #dislike-button.ytd-comment-action-buttons-renderer, #reply-button-end .ytSpecButtonShapeNextIcon, .ytFlexibleActionsViewModelAction, ytd-recognition-shelf-renderer, yt-light-shape, td.ytd-about-channel-renderer:has(yt-icon), .ytTabShapeTabBar, ytd-expandable-tab-renderer yt-icon-button button yt-icon, yt-download-list-item-view-model, #share-button, yt-attribution-view-model {
+    yt-thumbnail-hover-overlay-toggle-actions-view-model, ytd-thumbnail-overlay-toggle-button-renderer, .tabGroupShapeSlider, yt-horizontal-list-renderer #left-arrow, yt-horizontal-list-renderer #right-arrow, #like-button.ytd-comment-action-buttons-renderer, #dislike-button.ytd-comment-action-buttons-renderer, #reply-button-end .ytSpecButtonShapeNextIcon, .ytFlexibleActionsViewModelAction, ytd-recognition-shelf-renderer, yt-light-shape, td.ytd-about-channel-renderer:has(yt-icon), .ytTabShapeTabBar, ytd-expandable-tab-renderer yt-icon-button button yt-icon, yt-download-list-item-view-model, #share-button, yt-attribution-view-model, ytd-item-section-renderer #menu, .ytTruncatedTextAbsoluteButton, .image-icon-container {
         display: none !important;
     }
     
@@ -532,6 +558,10 @@
         height: unset;
     }
     
+    truncated-text-content:hover {
+        text-decoration-line: underline;
+    }
+    
     /* Watch */
     #fixed-side-menu, ytd-watch-flexy[show-fixed-side-menu][is-two-columns_]:not([full-bleed-player]) #columns.ytd-watch-flexy::after, ytd-comments-header-renderer #simple-box, .thread-hitbox.ytd-comment-thread-renderer, .threadline.ytd-comment-view-model, #like-button.ytd-comment-engagement-bar, #dislike-button.ytd-comment-engagement-bar, #reply-button-end.ytd-comment-engagement-bar, ytd-creator-heart-renderer yt-icon-button, .ytSubThreadSubThreadContent .ytSpecButtonShapeNextIcon, #sponsor-button, ytd-pinned-comment-badge-renderer yt-icon, ytd-author-comment-badge-renderer yt-icon, .ytwPinnedCommentBadgeRendererCommentPin, yt-subscribe-button-view-model, ytd-info-panel-content-renderer #menu, .inline-source.style-scope.ytd-info-panel-content-renderer, #header-menu, .header-icon, #donation-shelf, how-this-was-made-section-view-model, ytd-video-description-infocards-section-renderer, yt-linear-layout-view-model, #title.ytd-video-description-transcript-section-renderer, #sub-header.ytd-video-description-transcript-section-renderer, .ytwPinnedCommentBadgeRendererContent span, .ytTextCarouselItemViewModelImageType {
         display: none !important;
@@ -543,7 +573,7 @@
 		}
     }
     
-    .ytd-reel-shelf-renderer {
+    #related .ytd-reel-shelf-renderer {
         & when (@noshortsSidebar = 1) {
             display: none;
 		}
@@ -585,7 +615,7 @@
     }
     
     #author-thumbnail {
-        & when (@noCommentpfp = 1) {
+        & when (@nopfpComment = 1) {
             display: none;
 		}
     }
@@ -663,6 +693,48 @@
         content: "Share";
     }
     
+    .ytSpecButtonShapeNextHost:hover {
+        background: none !important;
+    }
+    
+    .ytvlLiveLeaderboardItemViewModelRankNumberContainer {
+        width: unset;
+    }
+    
+    /* Live Chat */
+    .ytSpecAvatarShapeButton48, .ytSpecAvatarShapeAvatarSize48 {
+        width: 32px;
+        height: 32px;
+    }
+    
+    #content.yt-live-chat-text-message-renderer {
+        align-self: unset;
+    }
+    
+    #content.ytd-engagement-panel-section-list-renderer {
+        height: 0;
+    }
+    
+    ytd-section-list-renderer[live-chat-engagement-panel][should-scroll-in-panel] {
+        scrollbar-color: unset;
+        scrollbar-width: unset;
+    }
+    
+    yt-live-chat-text-message-renderer yt-img-shadow img {
+        width: 32px;
+        height: 32px;
+    }
+    
+    yt-live-chat-ninja-message-renderer {
+    background: none;
+    align-items: unset;
+    justify-content: unset;
+    }
+    
+    yt-live-chat-ninja-message-renderer svg, yt-live-chat-ninja-message-renderer yt-formatted-string, tp-yt-iron-pages {
+        display: none;
+    }
+    
     /* Comments */
     tp-yt-paper-ripple, .animating {
         display: none;
@@ -684,6 +756,10 @@
         & when (@removeCommentcontainimg = on) {
             display: none;
 		}
+    }
+    
+    tp-yt-paper-menu-button[vertical-align=top] .dropdown-content.tp-yt-paper-menu-button {
+        top: unset;
     }
     
     /* Player */
@@ -1035,6 +1111,23 @@
     
     ytd-watch-metadata #flexible-item-buttons button, ytd-watch-metadata #flexible-item-buttons a, .less-button.ytd-video-secondary-info-renderer, .more-button.ytd-video-secondary-info-renderer {
         text-transform: unset;
+    }
+    
+    .ytd-video-secondary-info-renderer:hover {
+        text-decoration-line: underline;
+    }
+    
+    /* SponsorBlock */
+    .sponsorThumbnailLabel.sponsorThumbnailLabelVisible svg, .sponsorBlockCategoryPillTitleSection img {
+        display: none;
+    }
+    
+    .sponsorThumbnailLabel.sponsorThumbnailLabelVisible span {
+        display: block;
+    }
+    
+    .sponsorThumbnailLabel {
+        opacity: 1;
     }
     
     /* Google */
