@@ -20,6 +20,7 @@ I don't like the YouTube's current layout and the userstyles that I found especi
 <img src="https://github.com/Anomasho/Less-than-YouTube/blob/main/Screenshot/3.png">
 <img src="https://github.com/Anomasho/Less-than-YouTube/blob/main/Screenshot/4.png">
 <img src="https://github.com/Anomasho/Less-than-YouTube/blob/main/Screenshot/5.png">
+<img src="https://github.com/Anomasho/Less-than-YouTube/blob/main/Screenshot/6.png">
 
 ## known issue
 - There may be some issues without LocalTube Manager.
