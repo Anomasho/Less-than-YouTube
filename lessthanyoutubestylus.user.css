@@ -265,7 +265,7 @@
         top: @topbarHeight;
     }
     
-    .yt-simple-endpoint, .yt-simple-endpoint:hover {
+    .ytd-masthead .yt-simple-endpoint, .yt-simple-endpoint:hover {
         color: @topbartextColor;
     }
     
