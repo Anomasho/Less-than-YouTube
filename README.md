@@ -19,7 +19,7 @@ I don't like the YouTube's current layout and the userstyles that I found especi
 
 ## known issue
 - Video player and some tweaks have some issues
-- Some features like Shorts may remained unfinished
+- Some features like Shorts may remain unfinished
 - YouTube may changed their layout that can ruin it
 - Not intended for logged in users
 
