@@ -1,6 +1,8 @@
 # Less than YouTube
-A simple "terminal-like" YouTube Userstyle for non-logged in users, compatible with LocalTube Manager<br>
-[**Install**](https://github.com/Anomasho/Less-than-YouTube/raw/refs/heads/main/lessthanyoutubestylus.user.css)
+A simple "terminal-like" YouTube Userstyle* for non-logged in users, compatible with LocalTube Manager<br>
+[**Install**](https://github.com/Anomasho/Less-than-YouTube/raw/refs/heads/main/lessthanyoutubestylus.user.css)<br>
+[**Stylus**](https://github.com/openstyles/stylus)<br>
+*Also need Userscript requirements
 
 ## story
 I don't like the YouTube's current layout and the userstyles that I found especially the ones that tried to mimic the old layout usually sucks or breaks when YouTube's layout change occurs and Vorapis v3 doesn't work properly for me without having an account log in and I'm using some other extensions that may not work properly for it so I ended up making a userstyle on my own.
