@@ -718,7 +718,9 @@
     }
     
     #flexible-item-buttons, yt-button-shape#button-shape {
-        display: none;
+        & when (@localtubeManager = 0) {
+            display: none;
+        }
     }
     
     ytd-video-description-transcript-section-renderer .ytSpecButtonShapeNextHost:hover {
@@ -736,7 +738,7 @@
     }
     
     /* Live Chat */
-    yt-live-chat-ninja-message-renderer svg, yt-live-chat-ninja-message-renderer yt-formatted-string, tp-yt-iron-pages#panel-pages, yt-live-chat-animation-overlay-renderer, #chat:after, #chat yt-image, #stats-bar, yt-live-chat-ticker-paid-message-item-renderer yt-img-shadow, #show-more, .yt-live-chat-viewer-engagement-message-renderer #action-button {
+    yt-live-chat-ninja-message-renderer svg, yt-live-chat-ninja-message-renderer yt-formatted-string, tp-yt-iron-pages#panel-pages, yt-live-chat-animation-overlay-renderer, #chat:after, #chat yt-image, #stats-bar, yt-live-chat-ticker-paid-message-item-renderer yt-img-shadow, #show-more, .yt-live-chat-viewer-engagement-message-renderer #action-button, yt-live-chat-empty-feed-view-model yt-image {
         display: none !important;
     }
     
@@ -807,6 +809,14 @@
     yt-live-chat-banner-manager yt-live-chat-author-chip:after {
         content: "•";
         color: @backgroundColor;
+    }
+    
+    yt-live-chat-empty-feed-view-model {
+        height: unset;
+    }
+    
+    #message.yt-live-chat-empty-feed-view-model {
+        text-align: unset;
     }
     
     /* Comments */
