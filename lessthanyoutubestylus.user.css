@@ -456,9 +456,7 @@
     }
     
     .ytFlexibleActionsViewModelAction {
-        & when (@localtubeManager = 1) {
-            display: none;
-		}
+        display: none;
     }
     
     #wrapper.tp-yt-app-header-layout > [slot="header"] {
@@ -717,6 +715,10 @@
     
     ytd-menu-renderer .ytSpecButtonShapeNextSizeM.ytSpecButtonShapeNextIconButton:before {
         content: "Share";
+    }
+    
+    #flexible-item-buttons, yt-button-shape#button-shape {
+        display: none;
     }
     
     ytd-video-description-transcript-section-renderer .ytSpecButtonShapeNextHost:hover {
@@ -1244,6 +1246,10 @@
     }
     
     /* Proper Description */
+    #subscribe-button {
+        display: none;
+    }
+    
     ytd-watch-metadata #owner #avatar {
             width: 32px;
             height: 32px;
