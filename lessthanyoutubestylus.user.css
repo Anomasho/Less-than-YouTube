@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Less than YouTube
 @namespace      https://github.com/Anomasho/Less-than-YouTube
-@version        0.9
+@version        2026.11.01
 @description    YouTube without the generic corporate layout feeling
 @author         Anomasho
 @preprocessor   less
@@ -66,6 +66,7 @@
         --yt-live-chat-vem-background-color: #000;
         --t6216186c28b3834b: #000;
         --tdc8af6750f0dad0d: #000;
+        --t7e34d5baa4ea6277: #000;
         --tfa3475c508f5dfef: #00f !important;
         --yt-saturated-raised-background: unset !important;
         --ytd-masthead-height: @topbarHeight;
@@ -107,7 +108,7 @@
         text-shadow: unset !important;
         box-shadow: unset !important;
         min-height: unset !important;
-        min-width: unset !important;
+        min-width: 0 !important;
         max-width: unset !important;
         mask-image: unset !important;
         -webkit-line-clamp: unset !important;
@@ -579,7 +580,7 @@
     }
     
     /* Watch */
-    #fixed-side-menu, ytd-watch-flexy[show-fixed-side-menu][is-two-columns_]:not([full-bleed-player]) #columns.ytd-watch-flexy::after, ytd-comments-header-renderer #simple-box, .thread-hitbox.ytd-comment-thread-renderer, .threadline.ytd-comment-view-model, #like-button.ytd-comment-engagement-bar, #dislike-button.ytd-comment-engagement-bar, #reply-button-end.ytd-comment-engagement-bar, ytd-creator-heart-renderer yt-icon-button, .ytSubThreadSubThreadContent .ytSpecButtonShapeNextIcon, #sponsor-button, ytd-pinned-comment-badge-renderer yt-icon, ytd-author-comment-badge-renderer yt-icon, .ytwPinnedCommentBadgeRendererCommentPin, yt-subscribe-button-view-model, ytd-info-panel-content-renderer #menu, .inline-source.style-scope.ytd-info-panel-content-renderer, #header-menu, .header-icon, #donation-shelf, how-this-was-made-section-view-model, ytd-video-description-infocards-section-renderer, yt-linear-layout-view-model, #title.ytd-video-description-transcript-section-renderer, #sub-header.ytd-video-description-transcript-section-renderer, .ytwPinnedCommentBadgeRendererContent span, .ytTextCarouselItemViewModelImageType, yt-tooltip, #ellipsis, #expand, #trailing-button, ytd-background-promo-renderer yt-img-shadow, ytd-background-promo-renderer #buttons, ytd-miniplayer, snackbar-container {
+    #fixed-side-menu, ytd-watch-flexy[show-fixed-side-menu][is-two-columns_]:not([full-bleed-player]) #columns.ytd-watch-flexy::after, ytd-comments-header-renderer #simple-box, .thread-hitbox.ytd-comment-thread-renderer, .threadline.ytd-comment-view-model, #like-button.ytd-comment-engagement-bar, #dislike-button.ytd-comment-engagement-bar, #reply-button-end.ytd-comment-engagement-bar, ytd-creator-heart-renderer yt-icon-button, .ytSubThreadSubThreadContent .ytSpecButtonShapeNextIcon, #sponsor-button, ytd-pinned-comment-badge-renderer yt-icon, ytd-author-comment-badge-renderer yt-icon, .ytwPinnedCommentBadgeRendererCommentPin, yt-subscribe-button-view-model, ytd-info-panel-content-renderer #menu, .inline-source.style-scope.ytd-info-panel-content-renderer, #header-menu, .header-icon, #donation-shelf, how-this-was-made-section-view-model, ytd-video-description-infocards-section-renderer, yt-linear-layout-view-model, #title.ytd-video-description-transcript-section-renderer, #sub-header.ytd-video-description-transcript-section-renderer, .ytwPinnedCommentBadgeRendererContent span, .ytTextCarouselItemViewModelImageType, yt-tooltip, #ellipsis, #expand, ytd-background-promo-renderer yt-img-shadow, ytd-background-promo-renderer #buttons, ytd-miniplayer, snackbar-container {
         display: none !important;
     }
     
@@ -1170,7 +1171,7 @@
         content: "Shuffle";
     }
     
-    ytd-toggle-button-renderer button[aria-pressed="true"]:before {
+    ytd-toggle-button-renderer button[aria-pressed="true"]:before, #publisher-container yt-formatted-string a:hover, #header-description yt-attributed-string a:hover {
         text-decoration-line: underline;
     }
     
@@ -1180,6 +1181,23 @@
     
     #next-video-title.ytd-playlist-panel-renderer {
         align-items: unset;
+    }
+    
+    #trailing-button button:before {
+        content: "▼";
+    }
+    
+    #trailing-button.ytd-playlist-panel-renderer {
+        width: unset;
+        height: unset;
+    }
+    
+    ytd-playlist-panel-video-renderer[selected] #index.ytd-playlist-panel-video-renderer {
+        display: block;
+    }
+    
+    .ytwThumbnailOverlayResumePlaybackRendererThumbnailOverlayResumePlaybackProgress {
+        background: #fff;
     }
     
     /* Loading */
