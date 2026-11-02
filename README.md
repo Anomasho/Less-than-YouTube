@@ -17,7 +17,7 @@ I don't like the YouTube's current layout and the userstyles that I found especi
 - https://greasyfork.org/en/scripts/468740-restore-youtube-username-from-handle-to-custom
 
 ### optional
-- https://github.com/abhishekY495/localtube-manager
+- https://github.com/abhishekY495/localtube-manager (Turn on Using LocalTube Manager)
 
 ## known issue
 - Video player and some tweaks have some issues
