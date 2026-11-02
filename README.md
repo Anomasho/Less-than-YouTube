@@ -1,9 +1,9 @@
 # Less than YouTube
-YouTube without the generic corporate layout feeling<br>
+A simple terminal-like YouTube Userstyle<br>
 [**Install**](https://github.com/Anomasho/Less-than-YouTube/raw/refs/heads/main/lessthanyoutubestylus.user.css)
 
-## about
-I don't like the YouTube's current layout and the userstyles that I found especially the ones that tried to mimic the old layout usually sucks and Vorapis v3 doesn't work properly for me without having an account log in and I'm using some other extensions that may not work properly for it so I decided to make a userstyle on my own. The community in those are just people that are usually obsessed over their nostalgia who are trying to pretend that they are a decade behind but they lack the knowledge of what the actual old internet was (and actually act like one) so instead of choosing what year of the layout I want, I decided to go for terminal-like, no icons, and removing all the features that are useless for myself.
+## story
+I don't like the YouTube's current layout and the userstyles that I found especially the ones that tried to mimic the old layout usually sucks or breaks when YouTube's layout change occurs and Vorapis v3 doesn't work properly for me without having an account log in and I'm using some other extensions that may not work properly for it so I ended up making a userstyle on my own.
 
 ## requirements (aka what i use for this)
 - https://github.com/abhishekY495/localtube-manager
@@ -23,7 +23,7 @@ I don't like the YouTube's current layout and the userstyles that I found especi
 <img src="https://github.com/Anomasho/Less-than-YouTube/blob/main/Screenshot/6.png">
 
 ## known issue
-- There may be some issues without LocalTube Manager.
-- Video player and some tweaks have some issues.
-- Some features like Shorts may be remained unfinished.
-- YouTube may update their layout that might break.
+- There may be some issues without LocalTube Manager
+- Video player and some tweaks have some issues
+- Some features like Shorts may be remained unfinished
+- YouTube may update their layout that might ruin the looks of it
