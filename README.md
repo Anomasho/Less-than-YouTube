@@ -1,5 +1,5 @@
 # Less than YouTube
-A simple terminal-like YouTube Userstyle for non-logged in users<br>
+A simple "terminal-like" YouTube Userstyle for non-logged in users, compatible with LocalTube Manager<br>
 [**Install**](https://github.com/Anomasho/Less-than-YouTube/raw/refs/heads/main/lessthanyoutubestylus.user.css)
 
 ## story
@@ -11,17 +11,15 @@ I don't like the YouTube's current layout and the userstyles that I found especi
 - https://greasyfork.org/en/scripts/439993-youtube-shorts-redirect
 - https://greasyfork.org/en/scripts/553702-youtube-fullscreen-fix-disable-more-videos-grid-preserve-controls
 
-### optional, but recommended
-- https://github.com/Anarios/return-youtube-dislike
+### optional
 - https://greasyfork.org/en/scripts/440613-youtube-proper-description
 - https://greasyfork.org/en/scripts/468740-restore-youtube-username-from-handle-to-custom
-
-### optional
-- https://github.com/abhishekY495/localtube-manager (Turn on Using LocalTube Manager)
+- https://github.com/Anarios/return-youtube-dislike
+- https://github.com/abhishekY495/localtube-manager (Turn on "Using LocalTube Manager")
 
 ## known issue
 - Video player and some tweaks have some issues
-- Some features like Shorts may be remained unfinished
+- Some features like Shorts may remained unfinished
 - YouTube may changed their layout that can ruin it
 - Not intended for logged in users
 
