@@ -23,6 +23,7 @@ I don't like the YouTube's current layout and the userstyles that I found especi
 - Video player and some tweaks have some issues
 - Some features like Shorts may be remained unfinished
 - YouTube may changed their layout that can ruin it
+- Not intended for logged in users
 
 ## screenshots
 <img src="https://github.com/Anomasho/Less-than-YouTube/blob/main/Screenshot/1.png">
