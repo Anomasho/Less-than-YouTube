@@ -1,5 +1,5 @@
 # Less than YouTube
-A simple terminal-like YouTube Userstyle<br>
+A simple terminal-like YouTube Userstyle for non-logged in users<br>
 [**Install**](https://github.com/Anomasho/Less-than-YouTube/raw/refs/heads/main/lessthanyoutubestylus.user.css)
 
 ## story
