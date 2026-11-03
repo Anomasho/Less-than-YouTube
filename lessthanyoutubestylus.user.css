@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Less than YouTube
 @namespace      https://github.com/Anomasho/Less-than-YouTube
-@version        2026.11.01
+@version        2026.11.03
 @description    YouTube without the generic corporate layout feeling
 @author         Anomasho
 @preprocessor   less
@@ -144,6 +144,10 @@
     
     *:not(#page-manager.ytd-app, animated-rolling-character, .caption-window, .ytp-chapter-hover-container, .ytp-storyboard-framepreview-img, .ytp-progress-bar-container, .ytp-chrome-controls .ytp-button, .ytp-replay-button, .ytp-volume-panel, .ytp-time-display) {
         margin: 0 !important;
+    }
+    
+    *:not(.ytp-volume-area, .ytp-prev-button, .ytp-next-button, .ytp-time-display, .ytp-chapter-title) {
+        align-items: unset !important;
     }
     
     html, body, ytd-app, #page-header.ytd-tabbed-page-header, #tabs-inner-container.ytd-tabbed-page-header {
@@ -432,10 +436,6 @@
         height: unset;
     }
     
-    ytd-video-renderer[use-search-ui] #channel-info.ytd-video-renderer {
-        align-items: unset;
-    }
-    
     #attributed-channel-name.ytd-video-renderer, #channel-name.ytd-video-renderer {
         align-self: unset;
     }
@@ -473,17 +473,13 @@
         width: 100%;
     }
     
-    ytd-item-section-renderer #items yt-lockup-view-model, #scroll-container ytm-shorts-lockup-view-model-v2, ytd-grid-channel-renderer, ytd-post-renderer {
+    ytd-item-section-renderer #items yt-lockup-view-model, #scroll-container ytm-shorts-lockup-view-model-v2, ytd-grid-channel-renderer, ytd-post-renderer, ytd-vertical-product-card-renderer {
         width: calc(100%/var(--ytd-rich-grid-items-per-row)) !important;
     }
     
     yt-img-shadow.ytd-grid-channel-renderer, yt-img-shadow.ytd-grid-channel-renderer img {
         width: 128px;
         height: 128px;
-    }
-    
-    .ytPageHeaderViewModelHeadline {
-        align-items: unset;
     }
     
     ytd-backstage-image-renderer {
@@ -573,6 +569,23 @@
         text-decoration-line: underline;
     }
     
+    #product-image.ytd-vertical-product-card-renderer {
+        height: 100%;
+    }
+    
+    #card-with-protection.ytd-vertical-product-card-renderer {
+        width: 100%;
+    }
+    
+    yt-img-shadow.ytd-vertical-product-card-renderer {
+        width: 100%;
+        height: 100%;
+    }
+    
+    #product-image img {
+        width: 100%;
+    }
+    
     /* Watch */
     #fixed-side-menu, ytd-watch-flexy[show-fixed-side-menu][is-two-columns_]:not([full-bleed-player]) #columns.ytd-watch-flexy::after, ytd-comments-header-renderer #simple-box, .thread-hitbox.ytd-comment-thread-renderer, .threadline.ytd-comment-view-model, #like-button.ytd-comment-engagement-bar, #dislike-button.ytd-comment-engagement-bar, #reply-button-end.ytd-comment-engagement-bar, ytd-creator-heart-renderer yt-icon-button, .ytSubThreadSubThreadContent .ytSpecButtonShapeNextIcon, #sponsor-button, ytd-pinned-comment-badge-renderer yt-icon, ytd-author-comment-badge-renderer yt-icon, .ytwPinnedCommentBadgeRendererCommentPin, yt-subscribe-button-view-model, ytd-info-panel-content-renderer #menu, .inline-source.style-scope.ytd-info-panel-content-renderer, #header-menu, .header-icon, #donation-shelf, how-this-was-made-section-view-model, ytd-video-description-infocards-section-renderer, yt-linear-layout-view-model, #title.ytd-video-description-transcript-section-renderer, #sub-header.ytd-video-description-transcript-section-renderer, .ytwPinnedCommentBadgeRendererContent span, .ytTextCarouselItemViewModelImageType, yt-tooltip, #ellipsis, #expand, ytd-background-promo-renderer yt-img-shadow, ytd-background-promo-renderer #buttons, ytd-miniplayer, snackbar-container {
         display: none !important;
@@ -633,10 +646,6 @@
     
     ytd-info-panel-container-renderer[title-style="LINK"] .title.ytd-info-panel-container-renderer {
         color: @textColor;
-    }
-    
-    #owner.ytd-watch-metadata, .top-level-buttons.ytd-menu-renderer, #actions.ytd-watch-metadata {
-        align-items: unset;
     }
     
     #top-row #top-level-buttons-computed:before {
@@ -723,14 +732,19 @@
         background: none !important;
     }
     
-    #header-top-row.ytd-playlist-panel-renderer {
-        align-items: unset;
-    }
-    
     ytd-background-promo-renderer {
-        align-items: unset;
         justify-content: unset;
         text-align: unset;
+    }
+    
+    #visibility-button button:before {
+        content: "Close";
+    }
+    
+    .ytStandardsTextareaShapeTextareaContainerLabelHidden .ytStandardsTextareaShapePlaceholder {
+        top: unset;
+        left: unset;
+        right: unset;
     }
     
     /* Live Chat */
@@ -767,7 +781,6 @@
     
     yt-live-chat-ninja-message-renderer {
         background: none;
-        align-items: unset;
         justify-content: unset;
     }
     
@@ -775,7 +788,7 @@
         white-space: unset;
     }
     
-    yt-live-chat-banner-renderer #message.yt-live-chat-text-message-renderer {
+    yt-live-chat-banner-renderer #message.yt-live-chat-text-message-renderer, yt-live-chat-banner-renderer #message.yt-live-chat-text-message-renderer a {
         color: @backgroundColor;
     }
     
@@ -821,7 +834,6 @@
     }
     
     .ytSpecButtonShapeNextHost {
-        align-items: unset;
         justify-content: unset;
     }
     
@@ -1187,10 +1199,6 @@
         white-space: unset;
     }
     
-    #next-video-title.ytd-playlist-panel-renderer {
-        align-items: unset;
-    }
-    
     #trailing-button button:before {
         content: "▼";
     }
@@ -1237,7 +1245,6 @@
     #custom-ltm-subscribe-button, #custom-ltm-subscribed-button, #custom-ltm-like-button, #custom-ltm-add-to-local-playlist-button {
         color: @textColor;
         background: unset !important;
-        align-items: unset
     }
     
     #custom-ltm-subscribe-button:hover, #custom-ltm-subscribed-button:hover, #custom-ltm-like-button:hover, #custom-ltm-add-to-local-playlist-button:hover, button:hover {
