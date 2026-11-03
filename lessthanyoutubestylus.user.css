@@ -746,6 +746,10 @@
         left: unset;
         right: unset;
     }
+
+	.ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment {
+        background: #fff;
+    }
     
     /* Live Chat */
     yt-live-chat-ninja-message-renderer svg, yt-live-chat-ninja-message-renderer yt-formatted-string, tp-yt-iron-pages#panel-pages, yt-live-chat-animation-overlay-renderer, #chat:after, #chat yt-image, #stats-bar, yt-live-chat-ticker-paid-message-item-renderer yt-img-shadow, #show-more, .yt-live-chat-viewer-engagement-message-renderer #action-button, yt-live-chat-empty-feed-view-model yt-image {
